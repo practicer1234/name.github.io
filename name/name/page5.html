@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五頁面</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #0e1621; /* Dark background */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden; /* 防止動畫溢出 */
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: linear-gradient(to right, #1a2533, #0e1621); /* Dark gradient background */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px;
+            animation: fadeIn 2s ease; /* Container fade-in */
+        }
+        
+        .dropdown {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+            cursor: pointer;
+            background-color: #fafafa;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown i {
+            font-size: 24px;
+            color: #333;
+        }
+        
+        .dropdown:hover {
+            transform: scale(1.1);
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 160px;
+            animation: slideDown 0.5s ease; /* Dropdown slide down */
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content a {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .section {
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            background-color: #1a2533; /* Dark section background */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease; /* Section fade-in up */
+        }
+        
+        .section h2 {
+            background-color: #022244;
+            color: #fff;
+            font-size: 24px;
+            padding: 15px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .news-item {
+            flex: 1 1 300px;
+            text-align: center;
+            padding: 20px;
+            background-color: #74b3f1; /* Darker news item background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            animation: fadeInUp 1s ease; /* News item fade-in up */
+        }
+        
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(236, 233, 233, 0.4);
+        }
+        
+        .news-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .news-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 12px 24px;
+            background-color: #022244;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.5s ease; /* Links fade-in up */
+        }
+        
+        .links a:hover {
+            background-color: #f4f9fe;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="dropdown">
+    <i class="fas fa-bars"></i>
+    <div class="dropdown-content">
+        <a href="index.html">首頁</a>
+        <a href="page3.html">ABOUT LISA SU</a>
+        <a href="page3.html">PRODUCT</a>
+        <a href="page4.html">PICTURE</a>
+        <a href="page4.html">ACHIEVE</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <h2>NEWS LINKS</h2>
+        <div class="news-container">
+            <div class="news-item">
+                <a href="https://technews.tw/2024/05/29/lisa-su-amd-samsung-3nm/">韓媒：蘇姿丰談話暗示 AMD 將成三星 3 奈米客戶</a>
+                <img src="news1.jpg" alt="News 1">
+            </div>
+            <div class="news-item">
+                <a href="https://money.udn.com/money/story/123742/7993848">「數學讓我找到了自己」</a>
+                <img src="news2.jpg" alt="News 2">
+            </div>
+            <div class="news-item">
+                <a href="https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?cnlid=1&id=0000693501_XSJ4A88K1EL9940AY1I2X">英特爾CEO宴請11家VIP名單曝光</a>
+                <img src="news3.jpg" alt="News 3">
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>RELATED LINKS</h2>
+        <div class="links">
+            <a href="https://x.com/lisasu">Lisa SU's Twitter</a>
+            <a href="https://www.amd.com/zh-tw/corporate/leadership/lisa-su.html">Lisa SU's produce</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

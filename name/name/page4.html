@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第四頁面</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: #fff;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+        .dropdown {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 50px;
+        }
+        .section {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease-out;
+        }
+        .section h2 {
+            margin: 0 0 20px;
+            background-color: rgba(0, 51, 102, 0.8);
+            color: #fff;
+            font-size: 24px;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .section p {
+            font-size: 18px;
+            color: #eee;
+            line-height: 1.6;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            width: 32%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="dropdown">
+    <i class="fas fa-bars" style="font-size: 24px; color: white;"></i>
+    <div class="dropdown-content">
+        <a href="index.html">首頁</a>
+        <a href="page3.html">ABOUT LISA SU</a>
+        <a href="page3.html">PRODUCT</a>
+        <a href="page5.html">NEWS</a>
+        <a href="page5.html">LINKS</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <h2>PICTURES</h2>
+        <div class="image-container">
+            <img src="1.jpg" alt="Image 1">
+            <img src="2.jpg" alt="Image 2">
+            <img src="3.jpeg" alt="Image 3">
+        </div>
+    </div>
+    <div class="section">
+        <h2>ACHIEVE</h2>
+        <p>Lisa Su has received numerous awards and honors for her outstanding performance in the semiconductor industry. Her leadership prowess is widely recognized, earning her immense
+            respect within the tech community.</p>
+    </div>
+</div>
+
+</body>
+</html>

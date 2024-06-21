@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lisa Su 和 影片</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #434343, #000000);
+            color: #fff;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .dropdown {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .section {
+            flex: 1;
+            display: flex;
+            padding: 20px;
+        }
+        .left, .middle, .right {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .left img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        h1, h2 {
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            border-bottom: 2px solid #555;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 24px;
+            border-bottom: 1px solid #777;
+            padding-bottom: 5px;
+        }
+        p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #ddd;
+        }
+        .blue-background {
+            background-color: rgba(0, 51, 102, 0.8);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        .video-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        .video-section iframe {
+            width: 80%;
+            height: 730px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .section {
+            animation: fadeIn 2s ease;
+        }
+        .hidden {
+            visibility: hidden;
+        }
+        .marquee {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-size: 20px;
+            padding: 10px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="dropdown">
+    <i class="fas fa-bars" style="font-size: 24px; color: white;"></i>
+    <div class="dropdown-content">
+        <a href="page3.html">ABOUT LISA SU</a>
+        <a href="page3.html">PRODUCT</a>
+        <a href="page4.html">PICTURE</a>
+        <a href="page4.html">ACHIEVE</a>
+        <a href="page5.html">NEWS</a>
+        <a href="page5.html">LINKS</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="left">
+            <img src="su.jpg" alt="Lisa Su">
+        </div>
+        <div class="middle">
+            <h1>Lisa Su</h1>
+            <p id="bio" class="hidden">President, Chief Executive Officer and Chair of AMD</p>
+            <h2>BIO</h2>
+            <div class="blue-background">
+                <p id="bio-content" class="hidden">台裔美國企業家<br>年齡&emsp;&emsp;&emsp;&emsp;&ensp;|54<br>知名於&ensp;| 半導體設計，絕緣層上矽設計</p>
+            </div>
+            <h2>EDUCATION</h2>
+            <div class="blue-background">
+                <p id="education-content" class="hidden">布朗克斯科學高中<br>麻省理工學院電機工程及計算機科學</p>
+            </div>
+            <h2>WORKING</h2>
+            <div class="blue-background">
+                <p id="working-content" class="hidden">1994-1999 IBM 研發部門<br>2000-2007 IBM 新興產品部門<br>2007-2011 飛思卡爾半導體<br>2012-2014 AMD 任命<br>2015-&emsp;&emsp;&ensp;AMD CEO<br>2017-&emsp;&emsp;&ensp;AMD Ryzen</p>
+            </div>
+        </div>
+        <div class="right">
+            <h2>AWARD</h2>
+            <div class="blue-background">
+                <p id="award-content" class="hidden">西屋科學獎<br>2021 | 福布斯百大女性<br>2021 IEEE 羅伯特·N·諾伊斯獎章獲獎者<br>2023 | 福布斯全球百大最有權勢女性第49位</p>
+            </div>
+            <h2>BRAND</h2>
+        </div>
+    </div>
+    <div class="video-section">
+        <div class="marquee">
+            <span>台積、超微夠麻吉！ 蘇姿丰合影魏哲家、與何麗梅暢談人生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AI教父黃仁勳、半導體女王蘇姿丰瞄準的下一個戰場：全球10大數據中心&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;逆襲英特爾、對陣輝達！蘇姿丰的AMD「二次創業」之路      </span>
+        </div>
+        <iframe width="1120" height="730" src="https://www.youtube.com/embed/MCi8jgALPYA?si=mS7CnBjaR61XGXpn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const texts = [
+            document.getElementById('bio'),
+            document.getElementById('bio-content'),
+            document.getElementById('education-content'),
+            document.getElementById('working-content'),
+            document.getElementById('award-content')
+        ];
+
+        texts.forEach((textElement, i) => {
+            const text = textElement.innerHTML;
+            textElement.innerHTML = '';
+            textElement.classList.remove('hidden');
+            let index = 0;
+
+            function showNextChar() {
+                if (index < text.length) {
+                    if (text[index] === '<') {
+                        const endTag = text.indexOf('>', index);
+                        textElement.innerHTML += text.substring(index, endTag + 1);
+                        index = endTag + 1;
+                    } else {
+                        textElement.innerHTML += text[index];
+                        index++;
+                    }
+                    setTimeout(showNextChar, 50);
+                }
+            }
+            showNextChar();
+        });
+    });
+</script>
+
+</body>
+</html>
